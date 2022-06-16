@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        UID: ${UID}
+    volumes:
+      - ./code:/go/src/code/app/
+    command: tail -f /dev/null
+    image: app-go
+    container_name: app-go
+    ports:
+      - 8081:8081
